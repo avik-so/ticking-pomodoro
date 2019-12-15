@@ -4,7 +4,7 @@ export class Pomodoro {
     return `<div id='clock'>${this.clockTime}</div>`;
   }
   updateTime(timeLeft: number) {
-    let seconds = Math.round(timeLeft / 1000);
+    let seconds = Math.floor(timeLeft / 1000);
     const minutes = Math.floor(seconds / 60);
     seconds -= minutes * 60;
     this.clockTime = `${this.pad(minutes)}:${this.pad(seconds)}`;
