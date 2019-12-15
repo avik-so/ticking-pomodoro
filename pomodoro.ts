@@ -8,6 +8,8 @@ export class Pomodoro   {
        let ms = 0;
        if (config[1] == "min") {
            ms =  parseInt(config[0]) * 60 * 1000;
+       } else if (config[1] == "sec") {
+           ms = parseInt(config[0]) * 1000;
        }
        this.shortMs = ms;
        return ms;

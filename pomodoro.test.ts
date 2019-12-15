@@ -1,4 +1,4 @@
-import {Pomodoro} from './pomodoro'
+import { Pomodoro } from './pomodoro';
 
 
 // UI box, shows ticking timmer
@@ -11,18 +11,22 @@ import {Pomodoro} from './pomodoro'
 
 
 
-
+let pomodoro: Pomodoro;
 
 describe('Can create Pomodor', () => {
-    it('have a pomodoro', () => {
-        let pomodoro = new Pomodoro();
-        expect(pomodoro).toBeTruthy();
+    beforeEach(()=> {
+        pomodoro  = new Pomodoro();
+    }
+
+    );
+    it('set Time accepts 30 sec syntax', () => {
+        pomodoro.setShortTime("30 sec");
+        expect(pomodoro.getShortTime()).toBe(30000);
     });
 
-    it('have a pomodoro', () => {
-        let pomodoro = new Pomodoro();
-        let shortTime = pomodoro.setShortTime("5 min");
-        expect(pomodoro.getShortTime()).toBe(shortTime);
+    it('set Time accepts 5 min syntax', () => {
+        pomodoro.setShortTime("5 min");
+        expect(pomodoro.getShortTime()).toBe(300000);
     });
     
 });
