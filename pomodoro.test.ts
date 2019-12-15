@@ -76,4 +76,10 @@ describe('text displays current time', () => {
     let expectedHTML = `<div id='clock'>00:03</div>`;
     expect(pomodoro.getClock()).toBe(expectedHTML);
   });
+
+  it('30 seconds shows 00:30', () => {
+    pomodoro.updateTime(30000);
+    let expectedHTML = `<div id='clock'>00:30</div>`;
+    expect(pomodoro.getClock()).toBe(expectedHTML);
+  });
 });
