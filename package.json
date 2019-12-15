@@ -32,5 +32,6 @@
   "bugs": {
     "url": "https://github.com/akessner/ticking-pomodoro/issues"
   },
+  "browserslist": "> 0.25%, not dead",
   "homepage": "https://github.com/akessner/ticking-pomodoro#readme"
 }

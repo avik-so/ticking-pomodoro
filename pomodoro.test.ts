@@ -1,6 +1,5 @@
 import { Pomodoro } from './pomodoro';
 
-// UI box, shows ticking timmer
 // start button, stop button, short-break, long-break, pomodoro
 
 // play sound on each tick.

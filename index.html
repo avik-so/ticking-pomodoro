@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <script src="./dist/pomodoro.js">
+        let pomodoro = new Pomodoro();
+    </script>
+</head>
+
+<body>
+    <audio id="ticking">
+        <source src="assets/audio/ticking.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="chime">
+        <source src="assets/audio/clockchime.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="buzz">
+        <source src="assets/audio/shortbuzzer.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div id="clock">00:00</div>
+    <div>
+        <button id="start" onclick='pomodoro.start();'>Start</button>
+        <button id="stop" />Stop</button>
+        <button id="reset" />Resest</button>
+    </div>
+
+    <div>
+        <button id="short" />Start a short break</button>
+        <button id="long" />Start a long break</button>
+        <button id="work" />Start a pomodoro work session</button>
+    </div>
+
+    <div>
+        <label for='work-time'>Set time for a pomodoro of work</label>
+        <input type="text" id="work-time" />
+    </div>
+    <div>
+        <label for='short-time'>Set time for a short break</label>
+        <input type="text" id="short-time" onchange="pomodoro.setShortTime(this.value)" />
+    </div>
+    <div>
+        <label for='long-time'>Set time for a long break</label>
+        <input type="text" id="long-time" />
+    </div>
+
+
+</body>
+
+</html>
