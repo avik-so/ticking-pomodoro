@@ -3,14 +3,20 @@ export class Pomodoro   {
     getShortTime(): number {
         return this.shortMs;
     }
-    setShortTime(time: string):number {
-       let config = time.split(" ");
-       let ms = 0;
+    setShortTime(time: string| number):number {
+        let ms:number = 0;
+        if (typeof time === "number"){
+           ms = time * 1000;
+
+       } else {
+        let config = time.split(" ");
+     
        if (config[1] == "min") {
            ms =  parseInt(config[0]) * 60 * 1000;
        } else if (config[1] == "sec") {
            ms = parseInt(config[0]) * 1000;
        }
+    }
        this.shortMs = ms;
        return ms;
     }

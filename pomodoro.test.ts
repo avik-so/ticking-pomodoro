@@ -24,6 +24,11 @@ describe('Can create Pomodor', () => {
         expect(pomodoro.getShortTime()).toBe(30000);
     });
 
+    it('set Time accepts only a number as seconds', () => {
+        pomodoro.setShortTime(30);
+        expect(pomodoro.getShortTime()).toBe(30000);
+    });
+
     it('set Time accepts 5 min syntax', () => {
         pomodoro.setShortTime("5 min");
         expect(pomodoro.getShortTime()).toBe(300000);
