@@ -12,12 +12,10 @@
     "typescript": "^3.7.3"
   },
   "scripts": {
-    "test": "jest --colors --coverage test",
     "compile": "tsc",
-    "red" : "npm run compile && npm run test",
+    "test": "jest --colors --coverage test",
+    "red": "npm run compile && npm run test",
     "green": "npm run red && git commit -aF commit.txt || git reset --hard"
-
-
   },
   "repository": {
     "type": "git",

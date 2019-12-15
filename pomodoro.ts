@@ -1,4 +1,17 @@
 export class Pomodoro {
+  clockTime: string = '00:00';
+  getClock(): any {
+    return `<div id='clock'>${this.clockTime}</div>`;
+  }
+  updateTime(timeLeft: number) {
+    const seconds = (timeLeft / 1000) % 1000;
+    const minutes = (timeLeft / 1000) % 60;
+    this.clockTime = `${this.pad(minutes)}:${this.pad(seconds)}`;
+  }
+
+  pad(value: number) {
+    return value > 9 ? value : '0' + value;
+  }
   setLongTime(time: string | number) {
     this.longMs = this.parseTime(time);
     return this.longMs;
