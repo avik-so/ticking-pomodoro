@@ -1,0 +1,38 @@
+{
+  "name": "ticking-pomodoro",
+  "version": "0.0.1",
+  "description": "Pomodor timer with authentic ticking sounds",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.3"
+  },
+  "scripts": {
+    "test": "jest --colors --coverage test",
+    "compile": "tsc",
+    "red" : "npm run compile && npm run test",
+    "green": "npm run red && git commit -aF commit.txt || git reset --hard"
+
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akessner/ticking-pomodoro.git"
+  },
+  "keywords": [
+    "pomodoro",
+    "technique",
+    "ticking",
+    "sounds"
+  ],
+  "author": "akessner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akessner/ticking-pomodoro/issues"
+  },
+  "homepage": "https://github.com/akessner/ticking-pomodoro#readme"
+}
