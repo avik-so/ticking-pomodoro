@@ -101,11 +101,11 @@ describe('text displays current time', () => {
   });
 });
 
-// describe('start button', () => {
-//   it('should start the timer when the button is clicked', () => {
-//     pomodoro.setWorkTime('30 sec');
-//     pomodoro.start();
-//     let expectedHTML = `<div id='clock'>30:00</div>`;
-//     expect(pomodoro.getClock()).toBe(expectedHTML);
-//   });
-// });
+describe('start button', () => {
+  it('should start the timer when the button is clicked', () => {
+    pomodoro.setWorkTime('25 min');
+    pomodoro.start();
+    let expectedHTML = `<div id='clock'>25:00</div>`;
+    expect(pomodoro.getClock()).toBe(expectedHTML);
+  });
+});

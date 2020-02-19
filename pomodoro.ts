@@ -1,4 +1,7 @@
 export class Pomodoro {
+  start() {
+    this.updateTime(this.workMs);
+  }
   clockTime: string = '00:00';
   getClock(): any {
     let element: HTMLElement | null | string = document.getElementById('clock');
