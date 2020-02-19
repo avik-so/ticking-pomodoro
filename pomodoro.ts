@@ -1,7 +1,13 @@
 export class Pomodoro {
   clockTime: string = '00:00';
   getClock(): any {
-    return `<div id='clock'>${this.clockTime}</div>`;
+    let element: HTMLElement | null | string = document.getElementById('clock');
+    if (element) {
+      element.innerHTML = this.clockTime;
+    } else {
+      element = `<div id='clock'>${this.clockTime}</div>`;
+    }
+    return element;
   }
   updateTime(timeLeft: number) {
     let seconds = Math.floor(timeLeft / 1000);
