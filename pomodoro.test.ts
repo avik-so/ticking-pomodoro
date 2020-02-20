@@ -105,6 +105,7 @@ describe('start button', () => {
   it('should start the timer when the button is clicked', () => {
     pomodoro.setWorkTime('25 min');
     pomodoro.start();
+    setTimeout(pomodoro.getClock, 1000);
     let expectedHTML = `<div id='clock'>25:00</div>`;
     expect(pomodoro.getClock()).toBe(expectedHTML);
   });
