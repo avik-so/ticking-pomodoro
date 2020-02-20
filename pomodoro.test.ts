@@ -110,3 +110,15 @@ describe('start button', () => {
     expect(pomodoro.getClock()).toBe(expectedHTML);
   });
 });
+
+describe('stop button', () => {
+  it('should stop the timer when the stop button is clicked', () => {
+    pomodoro.setWorkTime('25 min');
+    pomodoro.start();
+    pomodoro.updateTick(5);
+    pomodoro.stop();
+    expect(pomodoro.elapsedTime).toBe(5);
+    pomodoro.updateTick(5);
+    expect(pomodoro.elapsedTime).toBe(5);
+  });
+});

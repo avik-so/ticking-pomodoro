@@ -1,6 +1,17 @@
 export class Pomodoro {
+  isStopped = true;
+  elapsedTime: number = 0;
+  updateTick(timeIncrease: number) {
+    if (!this.isStopped) {
+      this.elapsedTime += timeIncrease;
+    }
+  }
   start() {
+    this.isStopped = false;
     this.updateTime(this.workMs);
+  }
+  stop() {
+    this.isStopped = true;
   }
   clockTime: string = '00:00';
   getClock(): any {
