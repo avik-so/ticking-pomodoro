@@ -1,7 +1,7 @@
 export class Pomodoro {
   isStopped = true;
   elapsedTime: number = 0;
-  updateTick(timeIncrease: number) {
+  updateTick(timeIncrease: number = 1) {
     if (!this.isStopped) {
       this.elapsedTime += timeIncrease;
     }
