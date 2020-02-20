@@ -13,10 +13,20 @@ export class Pomodoro {
     return element;
   }
   updateTime(timeLeft: number) {
+    this.clockTime = `${this.pad(this.getMinutes(timeLeft))}:${this.pad(
+      this.getSeconds(timeLeft)
+    )}`;
+  }
+  getSeconds(timeLeft: number): number {
     let seconds = Math.floor(timeLeft / 1000);
     const minutes = Math.floor(seconds / 60);
     seconds -= minutes * 60;
-    this.clockTime = `${this.pad(minutes)}:${this.pad(seconds)}`;
+    return seconds;
+  }
+  getMinutes(timeLeft: number): number {
+    let seconds = Math.floor(timeLeft / 1000);
+    const minutes = Math.floor(seconds / 60);
+    return minutes;
   }
 
   pad(value: number) {
